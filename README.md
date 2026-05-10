@@ -14,7 +14,7 @@ async function printNumber() {
 ```
 4. 
  
-## 02. Async & Await with useState and useEffect
+## 02. Async, Await & Fetch call with useState and useEffect
 ```
 import { useEffect, useState } from "react";
 
@@ -36,8 +36,14 @@ export default function ReactApp2() {
         <>
             <h2>Async Await Function: {advice}</h2>
             <button onClick={fetchUserData} type="submit">Click me to Async Await Function Results</button>
-            <p>You have read {count} pices of advice</p>
+            <Messages count={count} />
         </>
+    )
+}
+
+function Messages(props) {
+    return(
+        <p>You have read {props.count} lines of advices</p>
     )
 }
 ```
