@@ -7,7 +7,9 @@
 // import AsyncAwaitTest from './components/section1/AsyncAwait'
 // import BioApp from './components/bio/BioApp'
 // import Form from './components/bio/Form'
-import CheckBox from './components/checkbox/CheckBox'
+// import CheckBox from './components/checkbox/CheckBox'
+
+import RadioDropdown from "./components/radio6/RadioDropdown"
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -18,7 +20,8 @@ function App() {
       {/* <ReactApp2/> */}
       {/* <BioApp/> */}
       {/* <Form/> */}
-      <CheckBox/>
+      {/* <CheckBox/> */}
+      <RadioDropdown/>
     </>
   )
 }
