@@ -48,4 +48,64 @@ function Messages(props) {
 }
 ```
 
+## 03. Checkbox in React
+```react
+// import React from 'react'
+
+import { useState } from "react"
+
+const CheckBox = () => {
+    const [check, setCheck] = useState({
+        html: true,
+        css: false,
+        js: false
+
+    })
+    const htmlHandler = (e) => {
+        setCheck({ ...check, html: e.target.checked })
+    }
+    const cssHandler = (e) => {
+        setCheck({ ...check, css: e.target.checked })
+    }
+    const jsHandler = (e) => {
+        setCheck({ ...check, js: e.target.checked })
+    }
+    const resetHandler = () => {
+        setCheck({
+            html: false,
+            css: false,
+            js: false
+        })
+    }
+
+    return (
+        <div>
+            <h2>Checkbox in React</h2>
+            <label htmlFor="">
+                <input type="checkbox" checked={check.html} onChange={htmlHandler} />
+                HTML
+            </label>
+            <label htmlFor="">
+                <input type="checkbox" checked={check.css} onChange={cssHandler} />
+                CSS
+            </label>
+            <label htmlFor="">
+                <input type="checkbox" checked={check.js} onChange={jsHandler} />
+                JS
+            </label>
+            <button onClick={resetHandler}>Reset</button>
+
+            <h2>{(check.html || check.css || check.js)  && <h1>RESULTS</h1>}</h2>
+            <ul>
+                {check.html && <h2>Html</h2>}
+                {check.css && <h2>Css</h2>}
+                {check.js && <h2>Js</h2>}
+            </ul>
+
+        </div>
+    )
+}
+
+export default CheckBox
+```
 

@@ -1,20 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import ReactApp2 from './components/section1/React2'
-import AsyncAwaitTest from './components/section1/AsyncAwait'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from './assets/vite.svg'
+// import heroImg from './assets/hero.png'
+// import './App.css'
+// import ReactApp2 from './components/section1/React2'
+// import AsyncAwaitTest from './components/section1/AsyncAwait'
+// import BioApp from './components/bio/BioApp'
+// import Form from './components/bio/Form'
+import CheckBox from './components/checkbox/CheckBox'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <AsyncAwaitTest/>
-      <ReactApp2/>
-
-      
+      {/* <AsyncAwaitTest/> */}
+      {/* <ReactApp2/> */}
+      {/* <BioApp/> */}
+      {/* <Form/> */}
+      <CheckBox/>
     </>
   )
 }
