@@ -313,3 +313,43 @@ function CountS2({ count, data }) {
 export default CountS2
 
 ```
+# Function3
+## 1. Function as props
+App.jsx
+
+```jsx
+
+import User from "./components/function7/User"
+
+function App() {
+    const userHandler = (name) => {
+        console.log(name)
+        alert(name)
+    }
+  return (
+    <>
+      <User userHandler={userHandler} name="Al Muksid"/>
+      <User userHandler={userHandler} name="Mesion Sheikh"/>
+      <User userHandler={userHandler} name="Mujahid" />
+      <User userHandler={userHandler} name="Lemon Sheikh"/>
+    </>
+  )
+}
+
+export default App
+
+```
+
+User.jsx
+```jsx
+const User = ({userHandler, name}) => {
+
+  return (
+    <div>
+      <button onClick={() => userHandler(name)}>Suscribe</button>
+    </div>
+  )
+}
+
+export default User
+```
