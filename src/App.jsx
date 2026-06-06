@@ -9,7 +9,13 @@
 // import Form from './components/bio/Form'
 // import CheckBox from './components/checkbox/CheckBox'
 
-import RadioDropdown from "./components/radio6/RadioDropdown"
+import CountApp from "./components/Section2/useEffect/CountApp"
+
+// import UseEffectUseState from "./components/Section2/useEffect/UseEffect&UseState"
+
+// import UseEffectMUU from "./components/Section2/useEffect/UseEffectMUU"
+
+// import RadioDropdown from "./components/radio6/RadioDropdown"
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -21,7 +27,10 @@ function App() {
       {/* <BioApp/> */}
       {/* <Form/> */}
       {/* <CheckBox/> */}
-      <RadioDropdown/>
+      {/* <RadioDropdown/> */}
+      {/* <UseEffectMUU/> */}
+      {/* <UseEffectUseState/> */}
+      <CountApp/>
     </>
   )
 }

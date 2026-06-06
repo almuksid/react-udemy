@@ -158,3 +158,158 @@ const RadioDropdown = () => {
 export default RadioDropdown
 
 ```
+
+# Section2. React Hooks
+
+### List of popular react hooks: useState, useEffect, useContext, useRef, useReducer, useMemo, useCallback, useLayoutEffect,
+### React Dev tool for react debuging
+
+## 0. React Lifecycle has 3 main phaces
+
+| Phase | Description |
+|--------|-------------|
+| **Mounting** | Component is being created and inserted into the DOM. |
+| **Updating** | Component is being re-rendered due to state or props changes. |
+| **Unmounting** | Component is being removed from the DOM. |
+
+ ```jsx
+componentDidMount() {
+    console.log("Component Mounted")
+}
+ ``` 
+ 
+ ```jsx
+ componentDidUpdate(prevProps, prevState){
+    console.log("Component Updated")
+ }
+ ```
+
+```jsx
+componentWithUnpound(){
+    console.log("Component will be removed ")
+}
+
+ ```
+
+## 1. useEffect
+### 1. In modern React(with Hooks), we use useEffect() inside:
+```jsx
+useEffect(() => {}, []) - 1. mount
+useEffect(() => {}, [state]) - 2. update on state changes
+return () => {} - 3. unmount/clearup
+```
+### 2. How to work Life cycle method in useEffect, mounting updating unmounting inside use effect
+```jsx
+import { useEffect } from "react"
+
+
+const UseEffectMUU = () => {
+    const state = ("")
+    useEffect(() => {
+        console.log("Mount")
+        return () => {console.log("Hello World")}
+    }, [state])
+  return (
+    <div>
+      <h2>Welcome to almuksid.com</h2>
+    </div>
+  )
+}
+
+export default UseEffectMUU
+```
+### 3. useEffect used by useState
+```jsx
+import { useEffect, useState } from "react"
+
+
+const UseEffectUseState = () => {
+    const [count, setCount] = useState(0)
+    const [data, setData] = useState(0)
+
+    useEffect(() => {
+        console.log("Component Mount")
+        return () => {console.log("Component Unmount")}
+    }, [])
+
+    useEffect(() => {
+        console.log("Component Updated")
+        
+    }, [count, data])
+
+
+    return (
+        <div>
+            <h2>Use Effect using useState</h2>
+            <h2>count: {count}</h2>
+            <h2>data: {data}</h2>
+
+            <button onClick={() => setCount(count + 1)}>Increase Counter</button>
+            <button onClick={() => setData(data + 1)}>Increase Data</button>
+
+
+        </div>
+    )
+}
+
+export default UseEffectUseState
+
+```
+### 04. Use effect hooks based on the props 
+CountApp.jsx
+```jsx
+import { useState } from 'react'
+import CountS2 from './CountS2'
+
+const CountApp = () => {
+    const [count,setCount] = useState(0)
+    const [data, setData] = useState(0)
+
+
+  return (
+    <div>
+      <CountS2 count={count} data={data} />
+      <button onClick={() => setCount(count + 1)}>Count</button>
+      <button onClick={() => setData(data + 1)}>Data</button>
+    </div>
+  )
+}
+
+export default CountApp
+
+```
+
+CountS2.jsx
+```jsx
+import { useEffect } from "react";
+
+
+function CountS2({ count, data }) {
+    function countHandler() {
+        console.log("Count Clicked")
+    }
+
+
+    function dataHandler() {
+        console.log("Data Clicked")
+    }
+
+    useEffect(() => {
+        countHandler();
+    }, [count]);
+    
+    useEffect(() => {
+        dataHandler();
+    }, [data]);
+
+    return (
+        <div>
+            <h2>Count: {count}</h2>
+            <h2>Data: {data}</h2>
+        </div>
+    )
+}
+
+export default CountS2
+
+```
