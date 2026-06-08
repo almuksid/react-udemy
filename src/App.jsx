@@ -9,7 +9,9 @@
 // import Form from './components/bio/Form'
 // import CheckBox from './components/checkbox/CheckBox'
 
-import User from "./components/function3/User"
+import UseRef from "./components/UseRef"
+
+// import User from "./components/function3/User"
 
 // import CountApp from "./components/Section2/useEffect/CountApp"
 
@@ -21,10 +23,10 @@ import User from "./components/function3/User"
 
 function App() {
   // const [count, setCount] = useState(0)
-    const userHandler = (name) => {
-        console.log(name)
-        alert(name)
-    }
+    // const userHandler = (name) => {
+    //     console.log(name)
+    //     alert(name)
+    // }
   return (
     <>
       {/* <AsyncAwaitTest/> */}
@@ -36,10 +38,11 @@ function App() {
       {/* <UseEffectMUU/> */}
       {/* <UseEffectUseState/> */}
       {/* <CountApp/> */}
-      <User userHandler={userHandler} name="Al Muksid"/>
+      {/* <User userHandler={userHandler} name="Al Muksid"/>
       <User userHandler={userHandler} name="Mesion Sheikh"/>
       <User userHandler={userHandler} name="Mujahid" />
-      <User userHandler={userHandler} name="Lemon Sheikh"/>
+      <User userHandler={userHandler} name="Lemon Sheikh"/> */}
+      <UseRef/>    
     </>
   )
 }

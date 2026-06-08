@@ -161,7 +161,15 @@ export default RadioDropdown
 
 # Section2. React Hooks
 
-### List of popular react hooks: useState, useEffect, useContext, useRef, useReducer, useMemo, useCallback, useLayoutEffect,
+### List of popular react hooks: 
+|1|useState| 
+|2|useEffect| 
+|3|useContext| 
+|4|useRef and forwordRef| 
+|5|useReducer| 
+|6|useMemo| 
+|7|useCallback| 
+|8|useLayoutEffect| 
 ### React Dev tool for react debuging
 
 ## 0. React Lifecycle has 3 main phaces
@@ -313,8 +321,34 @@ function CountS2({ count, data }) {
 export default CountS2
 
 ```
+## What is forwardRef API?
+
+
 # Function3
 ## 1. Function as props
+1. Why do we need to pass functions as props from parent to child in React?
+->Ans:  In React, we pass functions as props from a parent component to a child component when the child needs to trigger an action that updates data or state owned by the parent.
+
+Why is this necessary?
+
+React follows one-way data flow:
+
+Parent ➜ Child (data flows down through props)
+Child cannot directly modify the parent's state
+
+So, if a child component needs to change something in the parent, the parent passes a function to the child, and the child calls that function when needed.
+
+***Viva/Interview Answer
+A child component communicates with its parent by calling a callback function passed down through props. The parent provides the function, and the child invokes it with data or event information. This allows the parent to update its state while maintaining React's one-way data flow.
+
+2. How can a child component communicate back to the parent in React?
+->Ans: A child component communicates back to the parent in React by calling a function that the parent passes down as a prop.
+
+Since React uses one-way data flow, the child cannot directly change the parent's state. Instead, the parent gives the child a callback function, and the child calls that function when it wants to send data or trigger an action.
+
+***Viva/Interview Answer
+A child component communicates with its parent by calling a callback function passed down through props. The parent provides the function, and the child invokes it with data or event information. This allows the parent to update its state while maintaining React's one-way data flow.
+
 App.jsx
 
 ```jsx
@@ -353,3 +387,65 @@ const User = ({userHandler, name}) => {
 
 export default User
 ```
+# 4.0. useRef Hook
+
+*** What is useRef in React?
+
+useRef হলো React-এর একটি Hook যা component re-render হলেও value ধরে রাখে। এটি মূলত DOM element access করার জন্য এবং এমন value store করার জন্য ব্যবহার করা হয় যেগুলো পরিবর্তন হলেও component re-render হওয়ার প্রয়োজন নেই। useRef এর value current property-এর মধ্যে থাকে।
+
+*** Why use useRef?
+
+useRef ব্যবহার করা হয় DOM element access করার জন্য এবং এমন value সংরক্ষণ করার জন্য যা component re-render ছাড়াই persist থাকবে। useRef-এর value পরিবর্তন হলেও component re-render হয় না।
+
+১. DOM Element Access করার জন্য
+
+ধরুন, button-এ click করলে input field-এ cursor (focus) চলে যাবে।
+```jsx
+import { useRef } from "react";
+
+function App() {
+  const inputRef = useRef();
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={focusInput}>Focus</button>
+    </>
+  );
+}
+```
+২. Value Store করার জন্য (Re-render ছাড়া)
+```jsx
+import { useRef } from "react";
+
+function App() {
+  const countRef = useRef(0);
+
+  const handleClick = () => {
+    countRef.current++;
+    console.log(countRef.current);
+  };
+
+  return (
+    <button onClick={handleClick}>
+      Click
+    </button>
+  );
+}
+```
+
+# 4.1.  forwordRef in reactJS
+
+# 5. useFormStatus Hook in ReactJS
+# 6. useTransition Hook in ReactJS
+# 7. React Memo
+# 8. useMemo Hook
+# 9. useCallback Hook
+# 10. Update Array in useState
+# 11. Update Object in useState
+# 12. React props Children
+# 13. State Lifting
