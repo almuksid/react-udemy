@@ -397,7 +397,7 @@ useRef হলো React-এর একটি Hook যা component re-render হ�
 
 useRef ব্যবহার করা হয় DOM element access করার জন্য এবং এমন value সংরক্ষণ করার জন্য যা component re-render ছাড়াই persist থাকবে। useRef-এর value পরিবর্তন হলেও component re-render হয় না।
 
-১. DOM Element Access করার জন্য
+Ex(i). DOM Element Access করার জন্য
 
 ধরুন, button-এ click করলে input field-এ cursor (focus) চলে যাবে।
 ```jsx
@@ -418,7 +418,7 @@ function App() {
   );
 }
 ```
-২. Value Store করার জন্য (Re-render ছাড়া)
+Ex(ii). Value Store করার জন্য (Re-render ছাড়া)
 ```jsx
 import { useRef } from "react";
 
@@ -438,7 +438,7 @@ function App() {
 }
 ```
 
-# 4.1.  forwordRef in reactJS
+# 4.1.  forwardRef in reactJS
 
 # 5. useFormStatus Hook in ReactJS
 # 6. useTransition Hook in ReactJS
@@ -449,3 +449,49 @@ function App() {
 # 11. Update Object in useState
 # 12. React props Children
 # 13. State Lifting
+
+
+
+# Chellenge1. Passing Data and Children in React
+project1.jsx
+```jsx
+import students from "../../api/student.json"
+import Student1 from "./Student1"
+const Project1 = () => {
+    return (
+        <div>
+            <h2>Challenge 1</h2>
+            <Student1 students={students}>
+            
+            <h2> The Al Muksid </h2>
+            <p>We are passing a simple student object </p>
+            </Student1>
+        </div>
+    )
+}
+
+export default Project1
+
+```
+student1.jsx
+```jsx
+const Student1 = ({ students, children }) => {
+    return (
+        <div>
+            {students.students.map((student) => (
+                <div key={student.id}>
+                    <h3>name: {student.name}</h3>
+                    <p>email: {student.email}</p>
+                    <p>phone: {student.phone_number}</p>
+
+                    <p>Spblicer: {children}</p>
+                    <hr />
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export default Student1
+
+```

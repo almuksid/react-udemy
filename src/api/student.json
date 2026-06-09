@@ -1,0 +1,104 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "Ayan Rahman",
+            "father_name": "Karim Rahman",
+            "mother_name": "Shirin Rahman",
+            "email": "ayan.rahman@example.com",
+            "age": 20,
+            "gender": "Male",
+            "phone_number": "+8801700000001"
+        },
+        {
+            "id": 2,
+            "name": "Nusrat Jahan",
+            "father_name": "Abdul Jalil",
+            "mother_name": "Rokeya Begum",
+            "email": "nusrat.jahan@example.com",
+            "age": 21,
+            "gender": "Female",
+            "phone_number": "+8801700000002"
+        },
+        {
+            "id": 3,
+            "name": "Tanvir Ahmed",
+            "father_name": "Mizan Ahmed",
+            "mother_name": "Salma Ahmed",
+            "email": "tanvir.ahmed@example.com",
+            "age": 22,
+            "gender": "Male",
+            "phone_number": "+8801700000003"
+        },
+        {
+            "id": 4,
+            "name": "Sadia Islam",
+            "father_name": "Habibur Islam",
+            "mother_name": "Farida Islam",
+            "email": "sadia.islam@example.com",
+            "age": 19,
+            "gender": "Female",
+            "phone_number": "+8801700000004"
+        },
+        {
+            "id": 5,
+            "name": "Mahin Chowdhury",
+            "father_name": "Rafiqul Chowdhury",
+            "mother_name": "Nasima Chowdhury",
+            "email": "mahin.chowdhury@example.com",
+            "age": 23,
+            "gender": "Male",
+            "phone_number": "+8801700000005"
+        },
+        {
+            "id": 6,
+            "name": "Jannatul Ferdous",
+            "father_name": "Shahidul Islam",
+            "mother_name": "Rina Akter",
+            "email": "jannatul.ferdous@example.com",
+            "age": 20,
+            "gender": "Female",
+            "phone_number": "+8801700000006"
+        },
+        {
+            "id": 7,
+            "name": "Rifat Hasan",
+            "father_name": "Kamal Hasan",
+            "mother_name": "Selina Hasan",
+            "email": "rifat.hasan@example.com",
+            "age": 24,
+            "gender": "Male",
+            "phone_number": "+8801700000007"
+        },
+        {
+            "id": 8,
+            "name": "Mim Akter",
+            "father_name": "Anwar Hossain",
+            "mother_name": "Lipi Akter",
+            "email": "mim.akter@example.com",
+            "age": 18,
+            "gender": "Female",
+            "phone_number": "+8801700000008"
+        },
+        {
+            "id": 9,
+            "name": "Sakib Hossain",
+            "father_name": "Jahangir Hossain",
+            "mother_name": "Parvin Akter",
+            "email": "sakib.hossain@example.com",
+            "age": 22,
+            "gender": "Male",
+            "phone_number": "+8801700000009"
+        },
+        {
+            "id": 10,
+            "name": "Tanjina Sultana",
+            "father_name": "Nurul Islam",
+            "mother_name": "Shahnaz Begum",
+            "email": "tanjina.sultana@example.com",
+            "age": 21,
+            "gender": "Female",
+            "phone_number": "+8801700000010"
+        }
+    ]
+}
