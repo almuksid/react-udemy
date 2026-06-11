@@ -395,7 +395,7 @@ export default User
 ```
 
 ---
-# Event4. Event Handling
+# Event4. Complete Guide to Event Handling, Event Propagation, Bubbling, and Capturing in React.js
 *What is event Handleing?*
 Event Handling হলো এমন একটি প্রক্রিয়া, যেখানে React User-এর কোনো Event (যেমন Click, Change, Submit) শনাক্ত করে এবং তার প্রতিক্রিয়ায় একটি Function Execute করে। এর মাধ্যমে Application Interactive হয়।
 

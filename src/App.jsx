@@ -30,6 +30,7 @@ function App() {
   //     alert(name)
   // }
 
+  // Building, bubble pahces
   // Bubbling, Capturing, and stopping propagation in React
   const grandParentEvent = (event) => {
     console.log("Grand Parent Event")
