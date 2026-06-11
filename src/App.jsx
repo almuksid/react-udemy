@@ -11,7 +11,7 @@
 
 // import ForwardRef from "./components/ForwardRef"
 // import UseRef from "./components/UseRef"
-import Project1 from "./components/chellenge/Project1"
+// import Project1 from "./components/chellenge/Project1"
 // import User from "./components/function3/User"
 
 // import CountApp from "./components/Section2/useEffect/CountApp"
@@ -21,13 +21,34 @@ import Project1 from "./components/chellenge/Project1"
 // import UseEffectMUU from "./components/Section2/useEffect/UseEffectMUU"
 
 // import RadioDropdown from "./components/radio6/RadioDropdown"
+import Propagations from "./components/propagations"
 
 function App() {
   // const [count, setCount] = useState(0)
-    // const userHandler = (name) => {
-    //     console.log(name)
-    //     alert(name)
-    // }
+  // const userHandler = (name) => {
+  //     console.log(name)
+  //     alert(name)
+  // }
+
+  // Bubbling, Capturing, and stopping propagation in React
+  const grandParentEvent = (event) => {
+    console.log("Grand Parent Event")
+    alert("Grand Parent Event")
+    event.stopPropagation()
+
+  }
+  const parentEvent = (event) => {
+    console.log("Parent Event")
+    alert("Parent Event")
+    event.stopPropagation()
+  }
+  const childEvent = (event) => {
+    console.log("Child Event")
+    alert("Child Event")
+    event.stopPropagation()
+  }
+
+
   return (
     <>
       {/* <AsyncAwaitTest/> */}
@@ -45,9 +66,12 @@ function App() {
       <User userHandler={userHandler} name="Lemon Sheikh"/> */}
       {/* <UseRef/>    
       <ForwardRef/> */}
-      <Project1>
+      {/* <Project1>
         
-      </Project1>
+      </Project1> */}
+
+      <Propagations grandParentEvent={grandParentEvent} parentEvent={parentEvent} childEvent={childEvent} />
+
     </>
   )
 }

@@ -162,14 +162,19 @@ export default RadioDropdown
 # Section2. React Hooks
 
 ### List of popular react hooks: 
-|1|useState| 
-|2|useEffect| 
-|3|useContext| 
-|4|useRef and forwordRef| 
-|5|useReducer| 
-|6|useMemo| 
-|7|useCallback| 
-|8|useLayoutEffect| 
+## Common React Events
+
+
+| Num | State |
+|--------|-------------|
+| 1 | useState | 
+| 2 | useEffect | 
+| 3 | useContext | 
+| 4 | useRef and forwordRef | 
+| 5 | useReducer | 
+| 6 | useMemo | 
+| 7 |useCallback | 
+| 8 | useLayoutEffect | 
 ### React Dev tool for react debuging
 
 ## 0. React Lifecycle has 3 main phaces
@@ -386,7 +391,186 @@ const User = ({userHandler, name}) => {
 }
 
 export default User
+
 ```
+
+---
+# Event4. Event Handling
+*What is event Handleing?*
+Event Handling হলো এমন একটি প্রক্রিয়া, যেখানে React User-এর কোনো Event (যেমন Click, Change, Submit) শনাক্ত করে এবং তার প্রতিক্রিয়ায় একটি Function Execute করে। এর মাধ্যমে Application Interactive হয়।
+
+*what is synthetic base event in react?*
+Synthetic Event হলো React-এর তৈরি একটি Cross-Browser Event Object, যা Native Browser Event-কে Wrapper করে এবং সব Browser-এ একই API ব্যবহার করে Event Handle করার সুবিধা দেয়।
+
+*Event Propagations*
+Event Propagations refers to the process of how event propagate or travel through the dom hierarchy.
+
+Event Propagations has 2 main phases in javascripts 
+i) Capturing Phase
+ii) Bubbling Phase
+
+*Common React Events* 
+| Event | Description |
+|--------|-------------|
+| `onClick` | When an element is clicked |
+| `onChange` | When an input value changes |
+| `onSubmit` | When a form is submitted |
+| `onMouseOver` | When the mouse hovers over an element |
+| `onKeyDown` | When a keyboard key is pressed |
+| `onFocus` | When an input gets focus |
+| `onBlur` | When an input loses focus |
+
+*Examples*
+
+```jsx
+onClick
+<button onClick={() => alert("Button Clicked!")}>   
+  Click Me
+</button>
+onChange
+<input
+  type="text"
+  onChange={(e) => console.log(e.target.value)}
+/>
+onSubmit
+<form onSubmit={() => console.log("Form Submitted")}>
+  <button type="submit">Submit</button>
+</form>
+onMouseOver
+<h2 onMouseOver={() => console.log("Mouse Over")}>
+  Hover Me
+</h2>
+onKeyDown
+<input
+  onKeyDown={() => console.log("Key Pressed")}
+/>
+onFocus
+<input
+  onFocus={() => console.log("Input Focused")}
+/>
+onBlur
+<input
+  onBlur={() => console.log("Input Lost Focus")}
+/>
+```
+
+Event Propagations has 2 main phases. We are discuss how to it work?
+*i) Capturing Phase*
+
+App.jsx
+```jsx
+import Propagations from "./components/propagations"
+
+function App() {
+  const grandParentEvent = (event) => {
+    console.log("Grand Parent Event")
+    alert("Grand Parent Event")
+    event.stopPropagation()
+    
+  }
+  const parentEvent = (event) => {
+    console.log("Parent Event")
+    alert("Parent Event")
+    event.stopPropagation()
+  }
+  const childEvent = (event) => {
+    console.log("Child Event")
+    alert("Child Event")
+    event.stopPropagation()
+  }
+      
+
+  return (
+    <>
+      <Propagations grandParentEvent={grandParentEvent} parentEvent={parentEvent} childEvent={childEvent}/>
+    </>
+  )
+}
+
+export default App
+```
+
+// Propagations.jsx
+```jsx
+import "./EvP.css"
+
+const Propagations = ({ grandParentEvent, parentEvent, childEvent }) => {
+  return (
+    <div>
+      <h2>Event Propagation in React</h2>
+      <div className="g-div" onClickCapture={grandParentEvent}>
+        <div className="p-div" onClickCapture={parentEvent}>
+          <div className="c-div" onClickCapture={childEvent}>
+            Child Div
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Propagations
+```
+*ii) Bubbling Phase # Bubbling, Capturing, and stopping propagation in React*
+App.jsx
+```jsx
+
+import Propagations from "./components/propagations"
+
+function App() {
+  const grandParentEvent = (event) => {
+    console.log("Grand Parent Event")
+    alert("Grand Parent Event")
+    event.stopPropagation()
+    
+  }
+  const parentEvent = (event) => {
+    console.log("Parent Event")
+    alert("Parent Event")
+    event.stopPropagation()
+  }
+  const childEvent = (event) => {
+    console.log("Child Event")
+    alert("Child Event")
+    event.stopPropagation()
+  }
+      
+
+  return (
+    <>
+      <Propagations grandParentEvent={grandParentEvent} parentEvent={parentEvent} childEvent={childEvent}/>
+    </>
+  )
+}
+
+export default App
+
+```
+
+// Propagations.jsx
+```jsx
+import "./EvP.css"
+
+const Propagations = ({ grandParentEvent, parentEvent, childEvent }) => {
+  return (
+    <div>
+      <h2>Event Propagation in React</h2>
+      <div className="g-div" onClick={grandParentEvent}>
+        <div className="p-div" onClick={parentEvent}>
+          <div className="c-div" onClick={childEvent}>
+            Child Div
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Propagations
+```
+---
+
+
 # 4.0. useRef Hook
 
 *** What is useRef in React?
